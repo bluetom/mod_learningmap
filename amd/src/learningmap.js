@@ -2,7 +2,7 @@ import {exception as displayException} from 'core/notification';
 import Templates from 'core/templates';
 import placestore from 'mod_learningmap/placestore';
 
-const circleRadius = 10;
+const circleRadius = 5;
 
 // Constants for updatePathDeclaration.
 const targetPoints = {

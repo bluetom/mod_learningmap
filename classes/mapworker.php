@@ -227,13 +227,13 @@ class mapworker {
                     $this->svgmap->add_checkmark($place);
                 }
             }
-            $notavailable = array_merge(
-                array_diff($allplaces, $notavailable, $completedplaces, $this->active, $impossible),
-                $notavailable
-            );
+//            $notavailable = array_merge(
+//                array_diff($allplaces, $notavailable, $completedplaces, $this->active, $impossible),
+//                $notavailable
+//            );
             // Handle unavailable places.
             foreach ($notavailable as $place) {
-                if (empty($this->placestore['showall'])) {
+                if ($this->placestore['showall'] ?? false) {
                     $this->svgmap->remove_place_or_path($place);
                 } else {
                     $this->svgmap->set_hidden($links[$place]);
